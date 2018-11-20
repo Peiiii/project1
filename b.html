@@ -1,14 +1,24 @@
 <html>
 <head>
 <meta charset="utf-8">
-<base target="_blank">
+<base target="_blank" href="">
 <link rel="stylesheet" type="text/css" href="style2.css">
 <script src="jquery-3.3.1.min.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
 <script src="script1.js"></script>
 <script>
 function show(){
-	var hid=$(".hidden");
-	hid.css('display','block');
+	var hid=$("#hidiv1");
+	if(hid.css("display")==="none"){
+		hid.css("display","block");
+	}
+	else
+		hid.css('display','none');
+}
+</script>
+<script>
+window.onload=function (){
+CKEDITOR.replace('editor1');
 }
 </script>
 </head>
@@ -61,8 +71,9 @@ function show(){
 </p>
 </div><!--text-->
 <hr>
-	<button id="button1" onClick="show()">click here</button> 
+	<button id="button1" onClick="show()">EDITOR</button> 
 	<div class="hidden" id ="hidiv1" style="display:none;background:orange;">
+	<textarea id="editor1">
 	<p>
 	The woman who is standing by the classroom is our Chinese teacher.
   这个站在教室旁边的女性是我们的语文老师。
@@ -85,8 +96,16 @@ She is no longer the girl who she used to be.
 <br>
 	<br>
 	hahaha!</p>
+	</textarea>
 	</div>
+	<div class="hidden" style="display:">
+	<br>
+	学习资源:
+	<ul><li><a href="data/mit-kalman-filter.pdf">mit-kalman-filter.pdf</a></li>
+		<li><a href="data/wiki-kalman-filter.pdf">wiki-kalman-filter.pdf</a></li>
+		<li><a href="data/deep-sort.pdf">deep-sort.pdf</a></li>
 	
+	</div>
 	
 	
 	
